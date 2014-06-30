@@ -1,0 +1,28 @@
+{
+  "name": "riakdown-indextotal",
+  "version": "0.0.1",
+  "description": "Get index totals from riakdown.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:fritzy/riakdown-indexcount.git"
+  },
+  "keywords": [
+    "riak",
+    "riakdown",
+    "level",
+    "levelup",
+    "leveldb",
+    "db",
+    "database"
+  ],
+  "author": "Nathan Fritz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fritzy/riakdown-indexcount/issues"
+  },
+  "homepage": "https://github.com/fritzy/riakdown-indexcount"
+}
