@@ -16,7 +16,9 @@ function RiakDownIndexTotal(db_, rdic_opts) {
     };
 
     db.getIndexValueTotal = function (index, value, opts, callback) {
-        var rdb = db.root();
+        if (Array.isArray(opts.bucket)) {
+            opts.bucket = opts.bucket.join('!');
+        }
         var request = {
             inputs:{
                 bucket: opts.bucket,
@@ -34,8 +36,10 @@ function RiakDownIndexTotal(db_, rdic_opts) {
                 }
             }]
         };
-        rdb.db.mapred({request: JSON.toString(request), content_type: 'application/json'}, function (err, reply) {
-            console.log(err, reply);
+        db.db._client.mapred({request: JSON.stringify(request), content_type: 'application/json'}, function (err, reply) {
+            if (Array.isArray(reply)) {
+                reply = reply[0];
+            }
             callback(err, reply);
         });
     };
